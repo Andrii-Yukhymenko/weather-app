@@ -1,0 +1,13 @@
+.header{
+  &__container{}
+  &__logo{}
+  &__controls{}
+}
+.header-logo{
+  &__icon{}
+  &__title{}
+}
+.header-controls{
+  &__theme-switcher{}
+  &__search{}
+}

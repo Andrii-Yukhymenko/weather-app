@@ -1,0 +1,13 @@
+@import "variables";
+
+body{
+  background: var(--body-background-color);
+}
+
+.container{}
+
+@import "components/header";
+
+@import 'components/current-weather';
+
+@import "components/weather-tabs";

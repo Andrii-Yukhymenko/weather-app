@@ -1,0 +1,18 @@
+.weather-tabs{
+  &__tabs-buttons-list{}
+  &__tab{}
+  &__cards-list{}
+}
+
+.tabs-buttons-list{
+  &__button{}
+}
+
+.weather-mini-card{
+  &__week-day{}
+  &__date{}
+  &__icon{}
+  &__day-temperature{}
+  &__night-temperature{}
+  &__precipitation{}
+}

@@ -1,0 +1,22 @@
+.current-weather{
+  &__container{}
+  &__main-info{}
+  &__detailed-info{}
+}
+.main-info{
+  &__top-wrapper{}
+  &__bottom-wrapper{}
+  &__temperature-wrapper{}
+  &__temperature{}
+  &__date{}
+  &__weather-icon{}
+  &__time{}
+  &__location{}
+}
+.detailed-info{
+  &__list{}
+  &__list-item{}
+  &__item-icon{}
+  &__item-title{}
+  &__item-text{}
+}
