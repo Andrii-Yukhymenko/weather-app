@@ -23,5 +23,13 @@
   &__theme-switcher{
     padding: 25px;
   }
-  &__search{}
+  &__search{
+    padding: 10px;
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 0 15px 0 0;
+    background: var(--component-bg);
+    box-shadow: var(--box-shadow);
+  }
 }
