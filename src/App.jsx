@@ -1,15 +1,16 @@
 import React from "react";
 import "./style/main.scss";
+import bg from "./images/Background/BgCloud.png";
 function App() {
   return (
     <>
       <header className="header">
         <div className="header__container container">
-          <div className="header__logo header-logo">
+          <div className="header-logo">
             <img src="" alt="logo icon" className="header-logo__icon" />
             <h1 className="header-logo__title">REACT WEATHER</h1>
           </div>
-          <div className="header-controls header-controls">
+          <div className="header-controls">
             <img
               src=""
               alt="switch theme"
@@ -39,7 +40,7 @@ function App() {
                 <div className="main-info__location">Город: Лондон</div>
               </div>
             </div>
-            <div className="current-weather detailed-info">
+            <div className="current-weather__detailed-info detailed-info">
               <ul className="detailed-info__list">
                 <li className="detailed-info__list-item">
                   <img src="" alt="icon" className="detailed-info__item-icon" />
@@ -62,25 +63,108 @@ function App() {
                   <div className="detailed-info__item-text">Облачно</div>
                 </li>
               </ul>
+              <img
+                className="detailed-info__bg-image"
+                src={bg}
+                alt="weather background image"
+              />
             </div>
           </div>
         </section>
         <section className="weather-tabs">
-          <div className="weather-tabs__tabs-buttons-list tabs-buttons-list">
-            <button className="tabs-buttons-list__button">Сегодня</button>
-            <button className="tabs-buttons-list__button">Сегодня</button>
-            <button className="tabs-buttons-list__button">Сегодня</button>
-          </div>
-          <div className="weather-tabs__tab">
-            <div className="weather-tabs__cards-list">
-              <card className='weather-mini-card'>
-                <div className="weather-mini-card__week-day">Субота</div>
-                <div className="weather-mini-card__date">12.01</div>
-                <img src="" alt="icon" className="weather-mini-card__date"/>
-                <div className="weather-mini-card__day-temperature">+16</div>
-                <div className="weather-mini-card__night-temperature">+10</div>
-                <div className="weather-mini-card__precipitation">Облачно</div>
-              </card>
+          <div className="weather-tabs__container container">
+            <div className="weather-tabs__tabs-buttons-list tabs-buttons-list">
+              <button className="tabs-buttons-list__button tabs-buttons-list__button--active">Сегодня</button>
+              <button className="tabs-buttons-list__button">Сегодня</button>
+              <button className="tabs-buttons-list__button">Сегодня</button>
+            </div>
+            <div className="weather-tabs__tab">
+              <div className="weather-tabs__cards-list">
+                <div className="weather-mini-card">
+                  <div className="weather-mini-card__week-day">Субота</div>
+                  <div className="weather-mini-card__date">12.01</div>
+                  <img src="" alt="icon" className="weather-mini-card__date" />
+                  <div className="weather-mini-card__day-temperature">+16</div>
+                  <div className="weather-mini-card__night-temperature">
+                    +10
+                  </div>
+                  <div className="weather-mini-card__precipitation">
+                    Облачно
+                  </div>
+                </div>
+                <div className="weather-mini-card">
+                  <div className="weather-mini-card__week-day">Субота</div>
+                  <div className="weather-mini-card__date">12.01</div>
+                  <img src="" alt="icon" className="weather-mini-card__date" />
+                  <div className="weather-mini-card__day-temperature">+16</div>
+                  <div className="weather-mini-card__night-temperature">
+                    +10
+                  </div>
+                  <div className="weather-mini-card__precipitation">
+                    Облачно
+                  </div>
+                </div>
+                <div className="weather-mini-card">
+                  <div className="weather-mini-card__week-day">Субота</div>
+                  <div className="weather-mini-card__date">12.01</div>
+                  <img src="" alt="icon" className="weather-mini-card__date" />
+                  <div className="weather-mini-card__day-temperature">+16</div>
+                  <div className="weather-mini-card__night-temperature">
+                    +10
+                  </div>
+                  <div className="weather-mini-card__precipitation">
+                    Облачно
+                  </div>
+                </div>
+                <div className="weather-mini-card">
+                  <div className="weather-mini-card__week-day">Субота</div>
+                  <div className="weather-mini-card__date">12.01</div>
+                  <img src="" alt="icon" className="weather-mini-card__date" />
+                  <div className="weather-mini-card__day-temperature">+16</div>
+                  <div className="weather-mini-card__night-temperature">
+                    +10
+                  </div>
+                  <div className="weather-mini-card__precipitation">
+                    Облачно
+                  </div>
+                </div>
+                <div className="weather-mini-card">
+                  <div className="weather-mini-card__week-day">Субота</div>
+                  <div className="weather-mini-card__date">12.01</div>
+                  <img src="" alt="icon" className="weather-mini-card__date" />
+                  <div className="weather-mini-card__day-temperature">+16</div>
+                  <div className="weather-mini-card__night-temperature">
+                    +10
+                  </div>
+                  <div className="weather-mini-card__precipitation">
+                    Облачно
+                  </div>
+                </div>
+                <div className="weather-mini-card">
+                  <div className="weather-mini-card__week-day">Субота</div>
+                  <div className="weather-mini-card__date">12.01</div>
+                  <img src="" alt="icon" className="weather-mini-card__date" />
+                  <div className="weather-mini-card__day-temperature">+16</div>
+                  <div className="weather-mini-card__night-temperature">
+                    +10
+                  </div>
+                  <div className="weather-mini-card__precipitation">
+                    Облачно
+                  </div>
+                </div>
+                <div className="weather-mini-card">
+                  <div className="weather-mini-card__week-day">Субота</div>
+                  <div className="weather-mini-card__date">12.01</div>
+                  <img src="" alt="icon" className="weather-mini-card__date" />
+                  <div className="weather-mini-card__day-temperature">+16</div>
+                  <div className="weather-mini-card__night-temperature">
+                    +10
+                  </div>
+                  <div className="weather-mini-card__precipitation">
+                    Облачно
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

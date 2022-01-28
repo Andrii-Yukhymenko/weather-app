@@ -1,18 +1,63 @@
 .weather-tabs{
-  &__tabs-buttons-list{}
+  &__container{}
+  &__tabs-buttons-list{
+  }
   &__tab{}
-  &__cards-list{}
+  &__cards-list{
+    padding: 20px;
+    display: flex;
+    background: var(--component-bg);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
 }
 
 .tabs-buttons-list{
-  &__button{}
+  display: flex;
+  margin: 0 0 7px 0;
+  &__button{
+    padding: 9px 20px;
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 0 15px 0 0;
+    background: var(--component-bg);
+    &:nth-last-child(1){
+      margin: 0;
+    }
+    &--active{
+      background: #4793FF;
+    }
+  }
 }
 
 .weather-mini-card{
-  &__week-day{}
-  &__date{}
-  &__icon{}
-  &__day-temperature{}
-  &__night-temperature{}
+  width: 14.25%;
+  margin: 0 30px 0 0;
+  &:nth-last-child(1){
+    margin: 0;
+  }
+  border-radius: 10px;
+  background: var(--daly-card-bg);
+  padding: 10px;
+  color: var(--secondary-text-color);
+  &__week-day{
+    color: var(--text-color);
+    margin: 0 0 8px 0;
+  }
+  &__date{
+    margin: 0 0 12px 0;
+  }
+  &__icon{
+    margin: 0 0 15px 0;
+  }
+  &__day-temperature{
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+  }
+  &__night-temperature{
+    margin: 0 0 8px 0;
+  }
   &__precipitation{}
 }

@@ -1,13 +1,27 @@
 .header{
-  &__container{}
-  &__logo{}
-  &__controls{}
+  padding: 20px 0;
+  &__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 .header-logo{
+  display: flex;
+  align-items: center;
   &__icon{}
-  &__title{}
+  &__title{
+    padding: 20px;
+    color: #4793FF;
+    font-weight: bold;
+    font-size: 25px;
+  }
 }
 .header-controls{
-  &__theme-switcher{}
+  display: flex;
+  align-items: center;
+  &__theme-switcher{
+    padding: 25px;
+  }
   &__search{}
 }

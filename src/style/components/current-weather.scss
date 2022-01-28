@@ -1,22 +1,94 @@
+@import "../variables";
+
 .current-weather{
-  &__container{}
-  &__main-info{}
-  &__detailed-info{}
+  margin: 0 0 50px 0;
+  &__container{
+    display: flex;
+  }
+  &__main-info{
+    width: 25%;
+    margin: 0 50px 0 0;
+  }
+  &__detailed-info{
+    width: 75%;
+  }
 }
 .main-info{
-  &__top-wrapper{}
-  &__bottom-wrapper{}
-  &__temperature-wrapper{}
-  &__temperature{}
-  &__date{}
+  padding: 45px 20px 20px 20px;
+  border-radius: var(--border-radius);
+  background: var(--component-bg);
+  box-shadow: var(--box-shadow);
+  &__top-wrapper{
+    display: flex;
+  }
+  &__bottom-wrapper{
+    font-size: 25px;
+    color: var(--secondary-text-color);
+  }
+  &__temperature-wrapper{
+    margin: 0 60px 0 0;
+  }
+  &__temperature{
+    color: #4793FF;
+    margin: 0 0 15px 0;
+    font-size: 96px;
+    position: relative;
+    &::after{
+      content: 'o';
+      font-size: 45px;
+      position: absolute;
+      top: 23%;
+      right: 22%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__date{
+    color: var(--text-color);
+    font-size: 40px;
+  }
   &__weather-icon{}
-  &__time{}
-  &__location{}
+  &__time{
+    margin: 0 0 15px 0;
+  }
+  &__location{
+  }
 }
 .detailed-info{
-  &__list{}
-  &__list-item{}
-  &__item-icon{}
-  &__item-title{}
-  &__item-text{}
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+  padding: 40px 30px;
+  border-radius: var(--border-radius);
+  background: var(--component-bg);
+  box-shadow: var(--box-shadow);
+  &__list{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__list-item{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    //margin: 0 0 25px;
+  }
+  &__item-icon{
+    margin: 0 20px 0 0;
+  }
+  &__item-title{
+    margin: 0 35px 0 0;
+    color: var(--secondary-text-color);
+  }
+  &__item-text{
+    margin: 0 20px 0 0;
+    color: var(--text-color);
+  }
+  &__bg-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
 }
