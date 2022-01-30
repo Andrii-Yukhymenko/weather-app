@@ -9,10 +9,10 @@ function WeatherTabs() {
       <div className="weather-tabs__container container">
         <div className="weather-tabs__tabs-buttons-list tabs-buttons-list">
           <button className="tabs-buttons-list__button tabs-buttons-list__button--active">
-            Сегодня
+            На неделю
           </button>
-          <button className="tabs-buttons-list__button">Сегодня</button>
-          <button className="tabs-buttons-list__button">Сегодня</button>
+          <button className="tabs-buttons-list__button">На 10 дней</button>
+          <button className="tabs-buttons-list__button">На месяц</button>
         </div>
         <div className="weather-tabs__tab">
           <div className="weather-tabs__cards-list">
@@ -30,8 +30,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>
@@ -44,8 +44,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>
@@ -58,8 +58,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>
@@ -72,8 +72,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>
@@ -86,8 +86,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>
@@ -100,8 +100,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>
@@ -114,8 +114,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>
@@ -128,8 +128,8 @@ function WeatherTabs() {
                   alt="icon"
                   className="weather-mini-card__icon"
                 />
-                <p className="weather-mini-card__day-temperature">+16</p>
-                <p className="weather-mini-card__night-temperature">+10</p>
+                <p className="weather-mini-card__day-temperature">+16 &deg;</p>
+                <p className="weather-mini-card__night-temperature">+10 &deg;</p>
                 <div className="weather-mini-card__precipitation">
                   Облачно
                 </div>

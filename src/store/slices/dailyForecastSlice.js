@@ -4,15 +4,15 @@ import { services } from "../../API/services";
 const initialState = {};
 
 export const fetchDailyForecast = createAsyncThunk(
-  "dailyForecast/fetchDailyForecast",
-  () => {
+  "dailyForecastSlice/fetchDailyForecast",
+  (place) => {
     return services
-      .getCurrentWeather("Kharkiv")
+      .getCurrentWeather(place)
       .then((responce) => responce.data);
   }
 );
 
-const dailyForecast = createSlice({
+const dailyForecastSlice = createSlice({
   name: "dailyForecast",
   initialState,
   reducers: {
@@ -27,5 +27,5 @@ const dailyForecast = createSlice({
   },
 });
 
-export default dailyForecast.reducer;
-export const { getData } = dailyForecast.actions;
+export default dailyForecastSlice.reducer;
+export const { getData } = dailyForecastSlice.actions;
