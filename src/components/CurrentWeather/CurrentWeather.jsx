@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import weatherIconSun from "../../images/WetherIcons/IconSun.svg";
 import infoThermometer from "../../images/InfoIcons/InfoThermometer.svg";
 import infoHumidity from "../../images/InfoIcons/InfoHumidity.svg";
 import infoPrecipitation from "../../images/InfoIcons/InfoPrecipitation.svg";
@@ -7,6 +6,7 @@ import infoWind from "../../images/InfoIcons/InfoWind.svg";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCurrentWeather } from "../../store/slices/currentWeatherSlice";
+import { findWeatherIcon } from "../../hooks/findWeatherIcon";
 
 function CurrentWeather() {
   const { place } = useParams();
@@ -34,7 +34,7 @@ function CurrentWeather() {
                 <div className="main-info__date">Сегодня</div>
               </div>
               <img
-                src={weatherIconSun}
+                src={findWeatherIcon(currentWeatherData.weather[0].id)}
                 alt="weather icon"
                 className="main-info__weather-icon"
               />
@@ -53,28 +53,38 @@ function CurrentWeather() {
                   <img src={infoThermometer} alt="icon" />
                 </div>
                 <div className="detailed-info__item-title">Температура</div>
-                <div className="detailed-info__item-text">{Math.round(currentWeatherData.main.temp)}&deg; - ощущается как {Math.round(currentWeatherData.main.feels_like)}&deg;</div>
+                <div className="detailed-info__item-text">
+                  {Math.round(currentWeatherData.main.temp)}&deg; - ощущается
+                  как {Math.round(currentWeatherData.main.feels_like)}&deg;
+                </div>
               </li>
               <li className="detailed-info__list-item">
                 <div className="detailed-info__item-icon">
                   <img src={infoHumidity} alt="icon" />
                 </div>
                 <div className="detailed-info__item-title">Давление</div>
-                <div className="detailed-info__item-text">{Math.round(currentWeatherData.main.pressure / 1.33)} мм ртутного столба - нормально</div>
+                <div className="detailed-info__item-text">
+                  {Math.round(currentWeatherData.main.pressure / 1.33)} мм
+                  ртутного столба - нормально
+                </div>
               </li>
               <li className="detailed-info__list-item">
                 <div className="detailed-info__item-icon">
                   <img src={infoPrecipitation} alt="icon" />
                 </div>
                 <div className="detailed-info__item-title">Осадки</div>
-                <div className="detailed-info__item-text">{currentWeatherData.weather[0].description}</div>
+                <div className="detailed-info__item-text">
+                  {currentWeatherData.weather[0].description}
+                </div>
               </li>
               <li className="detailed-info__list-item">
                 <div className="detailed-info__item-icon">
                   <img src={infoWind} alt="icon" />
                 </div>
                 <div className="detailed-info__item-title">Ветер</div>
-                <div className="detailed-info__item-text">{currentWeatherData.wind.speed} м/с юго-запад - легкий ветер</div>
+                <div className="detailed-info__item-text">
+                  {currentWeatherData.wind.speed} м/с юго-запад - легкий ветер
+                </div>
               </li>
             </ul>
             <img
