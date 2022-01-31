@@ -8,11 +8,11 @@ body[data-theme="light"] {
   --body-bg: #e5e5e5;
   --component-bg: #ffffff;
   --text-color: #000000;
-  --daly-card-bg: rgba(71, 147, 255, 0, 2);
+  --daly-card-bg: rgba(71, 147, 255, 0.2);
 }
 :root {
   --container-width: 1230px;
   --border-radius: 20px;
   --box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
-  --secondary-text-color: #939CB0;
+  --secondary-text-color: #939cb0;
 }

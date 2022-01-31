@@ -22,13 +22,14 @@
   align-items: center;
   &__theme-switcher{
     padding: 25px;
+    cursor: pointer;
   }
   &__search{
     padding: 10px;
     color: var(--text-color);
     border-radius: 5px;
     font-size: 18px;
-    margin: 0 15px 0 0;
+    margin: 0 0 0 15px;
     background: var(--component-bg);
     box-shadow: var(--box-shadow);
   }
