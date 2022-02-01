@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {services} from "../../API/services";
+import { openWeatherAPI } from "../../API/openWeatherAPI";
 
 const initialState = {
   loading: true,
@@ -7,11 +7,13 @@ const initialState = {
 };
 
 export const fetchCurrentWeather = createAsyncThunk(
-  'currentWeatherSlice/getCurrentWeather',
+  "currentWeatherSlice/getCurrentWeather",
   (place) => {
-    return services.getCurrentWeather(place).then((response) => response.data);
+    return openWeatherAPI
+      .getCurrentWeather(place)
+      .then((response) => response.data);
   }
-)
+);
 
 const currentWeatherSlice = createSlice({
   name: "currentWeatherSlice",
@@ -29,7 +31,7 @@ const currentWeatherSlice = createSlice({
       state.loading = false;
     },
     [fetchCurrentWeather.rejected]: (state) => {},
-  }
+  },
 });
 
 export default currentWeatherSlice.reducer;
