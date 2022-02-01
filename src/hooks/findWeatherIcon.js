@@ -5,7 +5,6 @@ import weatherIconSmallRain from "../images/WetherIcons/IconSmallRain.svg";
 import weatherIconRain from "../images/WetherIcons/IconRain.svg";
 
 export const findWeatherIcon = (description) => {
-  console.log(description);
   if (description >= 200 && description <= 232) {
     return weatherIconRain;
   }

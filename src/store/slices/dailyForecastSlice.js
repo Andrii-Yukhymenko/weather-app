@@ -33,6 +33,7 @@ const dailyForecastSlice = createSlice({
     [fetchDailyForecast.fulfilled]: (state, action) => {
       console.log(action.payload);
       state.loading = false;
+      state.dailyForecastData = action.payload;
     },
     [fetchDailyForecast.rejected]: (state) => {},
   },

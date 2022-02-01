@@ -1,19 +1,22 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import weatherIconCloudly from "../../images/WetherIcons/IconCloudly.svg";
 import {
   fetchDailyForecast,
   setPeriod,
 } from "../../store/slices/dailyForecastSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import DailyForecastCard from "../DailyForecastCard/DailyForecastCard";
 
 function WeatherTabs() {
   const { place } = useParams();
   const dispatch = useDispatch();
   const forecastPeriod = useSelector((state) => state.dailyForecast.period);
   const loading = useSelector((state) => state.dailyForecast.loading);
+  const dailyForecastData = useSelector(
+    (state) => state.dailyForecast.dailyForecastData
+  );
   useEffect(
     () => dispatch(fetchDailyForecast([place, forecastPeriod])),
     [forecastPeriod]
@@ -23,7 +26,10 @@ function WeatherTabs() {
       <div className="weather-tabs__container container">
         <div className="weather-tabs__tabs-buttons-list tabs-buttons-list">
           <button
-            onClick={() => dispatch(setPeriod(7))}
+            onClick={(e) => {
+              dispatch(setPeriod(7));
+              console.log(e);
+            }}
             className="tabs-buttons-list__button tabs-buttons-list__button--active"
           >
             На неделю
@@ -36,164 +42,26 @@ function WeatherTabs() {
           </button>
         </div>
         <div className="weather-tabs__tab">
-          {loading ? (
-            <p style={{ color: "var(--text-color)" }}>Загрузка</p>
-          ) : (
-            <div className="weather-tabs__cards-list">
+          <div className="weather-tabs__cards-list">
+            {loading ? (
+              <p style={{ color: "var(--text-color)" }}>Загрузка</p>
+            ) : (
               <Swiper
                 spaceBetween={20}
                 slidesPerView={7}
                 modules={[Navigation]}
                 navigation
               >
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    // src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="weather-mini-card">
-                  <p className="weather-mini-card__week-day">Субота</p>
-                  <p className="weather-mini-card__date">12.01</p>
-                  <img
-                    src={weatherIconCloudly}
-                    alt="icon"
-                    className="weather-mini-card__icon"
-                  />
-                  <p className="weather-mini-card__day-temperature">
-                    +16 &deg;
-                  </p>
-                  <p className="weather-mini-card__night-temperature">
-                    +10 &deg;
-                  </p>
-                  <div className="weather-mini-card__precipitation">
-                    Облачно
-                  </div>
-                </SwiperSlide>
+                {dailyForecastData.data.map((i) => {
+                  return (
+                    <SwiperSlide key={i.datetime}>
+                      <DailyForecastCard data={i} />;
+                    </SwiperSlide>
+                  );
+                })}
               </Swiper>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </section>
