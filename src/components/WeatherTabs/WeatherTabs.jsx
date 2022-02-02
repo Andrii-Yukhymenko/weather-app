@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import {
@@ -29,15 +29,16 @@ function WeatherTabs() {
           <button
             onClick={(e) => {
               dispatch(setPeriod(7));
-              console.log(e);
             }}
-            className="tabs-buttons-list__button tabs-buttons-list__button--active"
+            className={`tabs-buttons-list__button ${forecastPeriod === 7 && 'tabs-buttons-list__button--active'}`}
           >
             На неделю
           </button>
           <button
-            onClick={() => dispatch(setPeriod(14))}
-            className="tabs-buttons-list__button"
+            onClick={() => {
+              dispatch(setPeriod(14));
+            }}
+            className={`tabs-buttons-list__button ${forecastPeriod === 14 && 'tabs-buttons-list__button--active'}`}
           >
             На 14 дней
           </button>
@@ -45,7 +46,7 @@ function WeatherTabs() {
         <div className="weather-tabs__tab">
           <div className="weather-tabs__cards-list">
             {loading ? (
-              <Loader/>
+              <Loader />
             ) : (
               <Swiper
                 spaceBetween={20}
