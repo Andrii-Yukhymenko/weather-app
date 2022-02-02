@@ -17,7 +17,7 @@ export const findWeatherIcon = (description) => {
   if (description >= 504 && description <= 531) {
     return weatherIconRain;
   }
-  if (description >= 600 && description <= 622) {
+  if (description >= 600 && description <= 623) {
     return weatherIconRain;
   }
   if (description >= 701 && description <= 781) {

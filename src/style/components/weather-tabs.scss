@@ -4,8 +4,10 @@
   }
   &__tab{}
   &__cards-list{
+    min-height: 270px;
     padding: 20px;
     display: flex;
+    position: relative;
     background: var(--component-bg);
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
@@ -64,5 +66,7 @@
     margin: 0 0 8px 0;
     position: relative;
   }
-  &__precipitation{}
+  &__precipitation{
+    word-break: break-word;
+  }
 }

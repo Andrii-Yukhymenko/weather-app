@@ -1,22 +1,27 @@
-import React from 'react';
-import {findWeatherIcon} from "../../hooks/findWeatherIcon";
-import {SwiperSlide} from "swiper/react";
+import React from "react";
+import { findWeatherIcon } from "../../hooks/findWeatherIcon";
+import { SwiperSlide } from "swiper/react";
+import moment from "moment";
+import 'moment/locale/ru'
+moment.locale("ru");
 
-export function DailyForecastCard({data}) {
+export function DailyForecastCard({ data }) {
   return (
     <SwiperSlide className="weather-mini-card">
-      <p className="weather-mini-card__week-day">Субота</p>
-      <p className="weather-mini-card__date">{data.datetime}</p>
+      <p className="weather-mini-card__week-day">
+        {moment(data.datetime).format("dddd")}
+      </p>
+      <p className="weather-mini-card__date">{moment(data.datetime).format('DD.MM')}</p>
       <img
         src={findWeatherIcon(data.weather.code)}
         alt="icon"
         className="weather-mini-card__icon"
       />
       <p className="weather-mini-card__day-temperature">
-        {data.max_temp} &deg;
+        {Math.round(data.max_temp)} &deg;
       </p>
       <p className="weather-mini-card__night-temperature">
-        {data.min_temp} &deg;
+        {Math.round(data.min_temp)} &deg;
       </p>
       <div className="weather-mini-card__precipitation">
         {data.weather.description}

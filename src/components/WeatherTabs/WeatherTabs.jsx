@@ -8,6 +8,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import DailyForecastCard from "../DailyForecastCard/DailyForecastCard";
+import Loader from "../Loader/Loader";
 
 function WeatherTabs() {
   const { place } = useParams();
@@ -44,7 +45,7 @@ function WeatherTabs() {
         <div className="weather-tabs__tab">
           <div className="weather-tabs__cards-list">
             {loading ? (
-              <p style={{ color: "var(--text-color)" }}>Загрузка</p>
+              <Loader/>
             ) : (
               <Swiper
                 spaceBetween={20}
