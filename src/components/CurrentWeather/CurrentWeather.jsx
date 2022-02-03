@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCurrentWeather } from "../../store/slices/currentWeatherSlice";
 import { findWeatherIcon } from "../../hooks/findWeatherIcon";
 import Loader from "../Loader/Loader";
-import moment from "moment";
+import { findWeatherBg } from "../../hooks/findWeatherBg";
 
 function CurrentWeather() {
   const { place } = useParams();
@@ -18,7 +18,7 @@ function CurrentWeather() {
     dispatch(fetchCurrentWeather(place));
   }, []);
   const currentWeatherData = useSelector(
-    (state) => state.currentWeather.currentWeather
+    (state) => state.currentWeather.data
   );
   const loading = useSelector((state) => state.currentWeather.loading);
   return (
@@ -43,7 +43,9 @@ function CurrentWeather() {
                 />
               </div>
               <div className="main-info__bottom-wrapper">
-                <div className="main-info__time">Время: {moment(currentWeatherData.dt).format("hh:mm")}</div>
+                <div className="main-info__time">
+                  Время: {currentWeatherData.time}
+                </div>
                 <div className="main-info__location">
                   Город: {currentWeatherData.name}
                 </div>
@@ -52,10 +54,10 @@ function CurrentWeather() {
           )}
         </div>
         <div className="current-weather__detailed-info detailed-info">
-          {
-            loading ? (
-              <Loader/>
-            ) : (
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
               <ul className="detailed-info__list">
                 <li className="detailed-info__list-item">
                   <div className="detailed-info__item-icon">
@@ -63,8 +65,8 @@ function CurrentWeather() {
                   </div>
                   <div className="detailed-info__item-title">Температура</div>
                   <div className="detailed-info__item-text">
-                    {Math.round(currentWeatherData.main.temp)}&deg; - ощущается как{" "}
-                    {Math.round(currentWeatherData.main.feels_like)}&deg;
+                    {Math.round(currentWeatherData.main.temp)}&deg; - ощущается
+                    как {Math.round(currentWeatherData.main.feels_like)}&deg;
                   </div>
                 </li>
                 <li className="detailed-info__list-item">
@@ -96,13 +98,13 @@ function CurrentWeather() {
                   </div>
                 </li>
               </ul>
-            )
-          }
-          <img
-            className="detailed-info__bg-image"
-            src=""
-            alt="weather background image"
-          />
+              <img
+                className="detailed-info__bg-image"
+                src={findWeatherBg(currentWeatherData.weather[0].id)}
+                alt="weather background image"
+              />
+            </>
+          )}
         </div>
       </div>
     </section>

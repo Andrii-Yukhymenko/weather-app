@@ -4,29 +4,29 @@ import weatherIconRainAndSun from "../images/WetherIcons/IconRainAndSun.svg";
 import weatherIconSmallRain from "../images/WetherIcons/IconSmallRain.svg";
 import weatherIconRain from "../images/WetherIcons/IconRain.svg";
 
-export const findWeatherIcon = (description) => {
-  if (description >= 200 && description <= 232) {
+export const findWeatherIcon = (id) => {
+  if (id >= 200 && id <= 232) {
     return weatherIconRain;
   }
-  if (description >= 300 && description <= 321) {
+  if (id >= 300 && id <= 321) {
     return weatherIconSmallRain;
   }
-  if (description >= 500 && description <= 504) {
+  if (id >= 500 && id <= 504) {
     return weatherIconRainAndSun;
   }
-  if (description >= 504 && description <= 531) {
+  if (id >= 504 && id <= 531) {
     return weatherIconRain;
   }
-  if (description >= 600 && description <= 623) {
+  if (id >= 600 && id <= 623) {
     return weatherIconRain;
   }
-  if (description >= 701 && description <= 781) {
+  if (id >= 701 && id <= 781) {
     return weatherIconCloudly;
   }
-  if (description === 800) {
+  if (id === 800) {
     return weatherIconSun;
   }
-  if (description >= 801 && description <= 804) {
+  if (id >= 801 && id <= 804) {
     return weatherIconCloudly;
   }
 };

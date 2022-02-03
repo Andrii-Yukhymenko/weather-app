@@ -4,7 +4,7 @@ import { weatherBitAPI } from "../../API/weatherBitAPI";
 const initialState = {
   loading: true,
   period: 7,
-  dailyForecastData: {},
+  data: {},
 };
 
 export const fetchDailyForecast = createAsyncThunk(
@@ -23,7 +23,6 @@ const dailyForecastSlice = createSlice({
   reducers: {
     setPeriod: (state, action) => {
       state.period = action.payload;
-      console.log("Период изменен");
     },
   },
   extraReducers: {
@@ -33,7 +32,7 @@ const dailyForecastSlice = createSlice({
     [fetchDailyForecast.fulfilled]: (state, action) => {
       console.log(action.payload);
       state.loading = false;
-      state.dailyForecastData = action.payload;
+      state.data = action.payload;
     },
     [fetchDailyForecast.rejected]: (state) => {},
   },

@@ -6,10 +6,13 @@ import 'moment/locale/ru'
 moment.locale("ru");
 
 export function DailyForecastCard({ data }) {
+  let weekDay = moment(data.datetime).format('dddd').split('');
+  weekDay[0] = weekDay[0].toUpperCase();
+  weekDay.join('');
   return (
     <SwiperSlide className="weather-mini-card">
       <p className="weather-mini-card__week-day">
-        {moment(data.datetime).format("dddd")}
+        {weekDay}
       </p>
       <p className="weather-mini-card__date">{moment(data.datetime).format('DD.MM')}</p>
       <img

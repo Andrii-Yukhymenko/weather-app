@@ -15,9 +15,7 @@ function WeatherTabs() {
   const dispatch = useDispatch();
   const forecastPeriod = useSelector((state) => state.dailyForecast.period);
   const loading = useSelector((state) => state.dailyForecast.loading);
-  const dailyForecastData = useSelector(
-    (state) => state.dailyForecast.dailyForecastData
-  );
+  const dailyForecastData = useSelector((state) => state.dailyForecast.data);
   useEffect(
     () => dispatch(fetchDailyForecast([place, forecastPeriod])),
     [forecastPeriod]
@@ -30,7 +28,9 @@ function WeatherTabs() {
             onClick={(e) => {
               dispatch(setPeriod(7));
             }}
-            className={`tabs-buttons-list__button ${forecastPeriod === 7 && 'tabs-buttons-list__button--active'}`}
+            className={`tabs-buttons-list__button ${
+              forecastPeriod === 7 && "tabs-buttons-list__button--active"
+            }`}
           >
             На неделю
           </button>
@@ -38,7 +38,9 @@ function WeatherTabs() {
             onClick={() => {
               dispatch(setPeriod(14));
             }}
-            className={`tabs-buttons-list__button ${forecastPeriod === 14 && 'tabs-buttons-list__button--active'}`}
+            className={`tabs-buttons-list__button ${
+              forecastPeriod === 14 && "tabs-buttons-list__button--active"
+            }`}
           >
             На 14 дней
           </button>

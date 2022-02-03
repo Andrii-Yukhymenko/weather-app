@@ -3,7 +3,8 @@ import { openWeatherAPI } from "../../API/openWeatherAPI";
 
 const initialState = {
   loading: true,
-  currentWeather: {},
+  error: "",
+  data: {},
 };
 
 export const fetchCurrentWeather = createAsyncThunk(
@@ -18,21 +19,21 @@ export const fetchCurrentWeather = createAsyncThunk(
 const currentWeatherSlice = createSlice({
   name: "currentWeatherSlice",
   initialState,
-  reducers: {
-    getWeather: (state, action) => {
-      console.log(state);
-    },
-  },
   extraReducers: {
     [fetchCurrentWeather.pending]: (state) => {},
     [fetchCurrentWeather.fulfilled]: (state, action) => {
       console.log(action.payload);
-      state.currentWeather = action.payload;
+      state.data = action.payload;
+      const date = new Date();
+      console.log(date.getUTCHours());
+      state.data.time = `${date.getUTCHours() + (state.data.timezone / 3600)}:${date.getUTCMinutes()}`;
       state.loading = false;
     },
-    [fetchCurrentWeather.rejected]: (state) => {},
+    [fetchCurrentWeather.rejected]: (state, action) => {
+      state.error = action.payload
+      console.log(action.payload);
+    },
   },
 });
 
 export default currentWeatherSlice.reducer;
-export const { getWeather } = currentWeatherSlice.actions;
