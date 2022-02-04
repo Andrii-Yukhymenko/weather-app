@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import DailyForecastCard from "../DailyForecastCard/DailyForecastCard";
 import Loader from "../Loader/Loader";
+import {findNumberOfCards} from "../../hooks/findNumberOfCards";
 
 function WeatherTabs() {
   const { place } = useParams();
@@ -52,7 +53,9 @@ function WeatherTabs() {
             ) : (
               <Swiper
                 spaceBetween={20}
-                slidesPerView={7}
+                slidesPerView={
+                  findNumberOfCards(window.innerWidth)
+                }
                 modules={[Navigation]}
                 navigation
               >

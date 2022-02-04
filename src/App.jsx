@@ -9,7 +9,7 @@ import CountryWeatherPage from "./pages/CountryWeather/CountryWeatherPage";
 function App() {
   return (
     <>
-      <Header />
+      {/*<Header />*/}
       <main>
         <Routes>
           <Route path="/" element={<MainPage />} />

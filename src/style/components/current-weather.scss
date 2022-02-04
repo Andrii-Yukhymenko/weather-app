@@ -2,17 +2,31 @@
 
 .current-weather{
   margin: 0 0 50px 0;
+  @media(max-width: 1024px){
+    margin: 0 0 20px 0;
+  }
   &__container{
     display: flex;
+    @media(max-width: 1024px){
+      flex-direction: column;
+    }
   }
   &__main-info{
     width: 35%;
     min-height: 300px;
     position: relative;
     margin: 0 50px 0 0;
+    @media(max-width: 1024px){
+      margin: 0 0 25px 0;
+      width: 100%;
+    }
   }
   &__detailed-info{
     width: 65%;
+    min-height: 250px;
+    @media(max-width: 1024px){
+      width: 100%;
+    }
   }
 }
 .main-info{
@@ -42,7 +56,13 @@
     color: var(--text-color);
     font-size: 40px;
   }
-  &__weather-icon{}
+  &__weather-icon{
+    height: auto;
+    width: 40%;
+    @media(max-width: 1024px){
+      width: 180px;
+    }
+  }
   &__time{
     margin: 0 0 15px 0;
   }
@@ -58,11 +78,19 @@
   border-radius: var(--border-radius);
   background: var(--component-bg);
   box-shadow: var(--box-shadow);
+  @media(max-width: 768px){
+    padding: 20px;
+  }
   &__list{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media(max-width: 500px){
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+      gap: 10px;
+    }
   }
   &__list-item{
     height: 40px;
@@ -71,6 +99,12 @@
     margin: 0 0 20px;
     &:nth-last-child(1){
       margin: 0;
+    }
+    @media(max-width: 500px){
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 0 15px 0;
+      height: auto;
     }
   }
   &__item-icon{
@@ -81,6 +115,12 @@
     position: relative;
     background: #FFFFFF;
     box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+    @media(max-width: 768px){
+      margin: 0 10px 0 0;
+    }
+    @media(max-width: 500px){
+      margin: 0 0 10px 0;
+    }
     img{
       position: absolute;
       top: 50%;
@@ -91,9 +131,14 @@
   &__item-title{
     margin: 0 30px 0 0;
     color: var(--secondary-text-color);
+    @media(max-width: 768px){
+      margin: 0 10px 0 0;
+    }
+    @media(max-width: 500px){
+      margin: 0 0 10px 0;
+    }
   }
   &__item-text{
-    margin: 0 20px 0 0;
     color: var(--text-color);
   }
   &__bg-image{
@@ -102,5 +147,8 @@
     right: 0;
     z-index: 1;
     pointer-events: none;
+    @media(max-width: 768px){
+      display: none;
+    }
   }
 }
