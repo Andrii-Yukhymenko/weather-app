@@ -25,5 +25,6 @@ jobs:
             cd cloned-repo-react-weather
             git clone https://github.com/Andrii-Yukhymenko/weather-app.git
             cd weather-app/
+            yarn install
             yarn build
             cp -r build/* /var/www/react-weather
