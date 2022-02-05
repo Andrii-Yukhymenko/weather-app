@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import headerLogo from "../../images/Headerlogo.svg";
 import themeSwitcher from "../../images/ThemeSwitch.svg";
+import MagnifyingGlass from "../../images/MagnifyingGlass.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
@@ -21,7 +22,8 @@ function Header() {
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
   });
-
+  const ref = useRef();
+  const toggleSearchForm = () => ref.current.classList.toggle('header-controls__form--active');
   return (
     <header className="header">
       <div className="header__container container">
@@ -36,8 +38,19 @@ function Header() {
             alt="switch theme"
             className="header-controls__theme-switcher"
           />
-          <form onSubmit={(e) => goToCountryPage(e)}>
-            <input type="text" className="header-controls__search" />
+          {window.innerWidth < 768 && (
+            <button className="header-controls__search-button" onClick={toggleSearchForm}>
+              <img src={MagnifyingGlass} alt="search icon"/>
+            </button>
+          )}
+          <form
+            ref={ref}
+            className={`header-controls__form ${
+              window.innerWidth < 768 && "header-controls__form--collapsed"
+            }`}
+            onSubmit={(e) => goToCountryPage(e)}
+          >
+            <input type="text" className="header-controls__input" />
           </form>
         </div>
       </div>

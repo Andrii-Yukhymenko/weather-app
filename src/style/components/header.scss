@@ -20,17 +20,48 @@
 .header-controls{
   display: flex;
   align-items: center;
+  position: relative;
   &__theme-switcher{
-    padding: 25px;
+    padding: 20px;
     cursor: pointer;
+    margin: 0 15px 0 0;
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
   }
-  &__search{
+  &__form{
+    margin: 0 0 0 15px;
+  }
+  @keyframes anim {
+    0% {transform: translate(100%, 100%);}
+    100% {transform: translate(0, 100%)}
+  }
+  &__form--collapsed{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    background: #ffffff;
+  }
+  &__form--active{
+    display: block;
+    animation: anim .3s 1 forwards;
+  }
+  &__input{
     padding: 10px;
     color: var(--text-color);
     border-radius: 5px;
     font-size: 18px;
-    margin: 0 0 0 15px;
     background: var(--component-bg);
     box-shadow: var(--box-shadow);
+  }
+  &__search-button{
+    padding: 20px;
+    background: inherit;
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
   }
 }
