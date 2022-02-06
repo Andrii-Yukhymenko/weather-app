@@ -10,6 +10,7 @@ function Header() {
     e.preventDefault();
     navigate(`/${e.target[0].value}`);
     e.target[0].value = "";
+    ref.current.classList.remove('header-controls__form--active');
   };
 
   let LSTheme = localStorage.getItem("theme");

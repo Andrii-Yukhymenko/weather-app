@@ -3,7 +3,7 @@ import { openWeatherAPI } from "../../API/openWeatherAPI";
 
 const initialState = {
   loading: true,
-  error: "",
+  error: false,
   data: {},
 };
 
@@ -20,7 +20,9 @@ const currentWeatherSlice = createSlice({
   name: "currentWeatherSlice",
   initialState,
   extraReducers: {
-    [fetchCurrentWeather.pending]: (state) => {},
+    [fetchCurrentWeather.pending]: (state) => {
+      state.error = false;
+    },
     [fetchCurrentWeather.fulfilled]: (state, action) => {
       console.log(action.payload);
       state.data = action.payload;
@@ -30,7 +32,7 @@ const currentWeatherSlice = createSlice({
       state.loading = false;
     },
     [fetchCurrentWeather.rejected]: (state, action) => {
-      state.error = action.payload
+      state.error = true;
       console.log(action.payload);
     },
   },
