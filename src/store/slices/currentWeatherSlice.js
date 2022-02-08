@@ -22,6 +22,7 @@ const currentWeatherSlice = createSlice({
   extraReducers: {
     [fetchCurrentWeather.pending]: (state) => {
       state.error = false;
+      state.loading = true;
     },
     [fetchCurrentWeather.fulfilled]: (state, action) => {
       console.log(action.payload);

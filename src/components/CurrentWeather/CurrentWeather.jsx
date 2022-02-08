@@ -16,7 +16,7 @@ function CurrentWeather() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCurrentWeather(place));
-  }, []);
+  }, [place]);
   const currentWeatherData = useSelector(
     (state) => state.currentWeather.data
   );

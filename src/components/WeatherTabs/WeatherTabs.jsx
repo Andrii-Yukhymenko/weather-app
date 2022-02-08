@@ -17,9 +17,10 @@ function WeatherTabs() {
   const forecastPeriod = useSelector((state) => state.dailyForecast.period);
   const loading = useSelector((state) => state.dailyForecast.loading);
   const dailyForecastData = useSelector((state) => state.dailyForecast.data);
+  const currentWeatherData = useSelector((state) => state.currentWeather.data);
   useEffect(
     () => dispatch(fetchDailyForecast([place, forecastPeriod])),
-    [forecastPeriod]
+    [forecastPeriod, currentWeatherData]
   );
   return (
     <section className="weather-tabs">
