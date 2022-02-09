@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import headerLogo from "../../images/Headerlogo.svg";
 import themeSwitcher from "../../images/ThemeSwitch.svg";
 import MagnifyingGlass from "../../images/MagnifyingGlass.svg";
@@ -10,13 +10,14 @@ function Header() {
     e.preventDefault();
     navigate(`/${e.target[0].value}`);
     e.target[0].value = "";
-    ref.current.classList.remove('header-controls__form--active');
+    ref.current.classList.remove("header-controls__form--active");
   };
 
   let LSTheme = localStorage.getItem("theme");
 
   if (LSTheme === null) {
-  localStorage.setItem("theme", "light");
+    LSTheme = 'light';
+    localStorage.setItem("theme", "light");
   }
 
   const [theme, setTheme] = useState(LSTheme);
@@ -29,7 +30,8 @@ function Header() {
     document.body.setAttribute("data-theme", theme);
   });
   const ref = useRef();
-  const toggleSearchForm = () => ref.current.classList.toggle('header-controls__form--active');
+  const toggleSearchForm = () =>
+    ref.current.classList.toggle("header-controls__form--active");
   return (
     <header className="header">
       <div className="header__container container">
@@ -45,8 +47,11 @@ function Header() {
             className="header-controls__theme-switcher"
           />
           {window.innerWidth < 768 && (
-            <button className="header-controls__search-button" onClick={toggleSearchForm}>
-              <img src={MagnifyingGlass} alt="search icon"/>
+            <button
+              className="header-controls__search-button"
+              onClick={toggleSearchForm}
+            >
+              <img src={MagnifyingGlass} alt="search icon" />
             </button>
           )}
           <form
