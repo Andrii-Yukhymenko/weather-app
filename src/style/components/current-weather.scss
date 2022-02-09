@@ -20,6 +20,9 @@
       margin: 0 0 25px 0;
       width: 100%;
     }
+    @media(max-width: 768px){
+      min-height: 250px;
+    }
   }
   &__detailed-info{
     width: 65%;
@@ -34,6 +37,9 @@
   border-radius: var(--border-radius);
   background: var(--component-bg);
   box-shadow: var(--box-shadow);
+  @media(max-width: 768px){
+    padding: 30px 15px 20px 15px;
+  }
   &__top-wrapper{
     display: flex;
     justify-content: space-between;
@@ -42,6 +48,9 @@
   &__bottom-wrapper{
     font-size: 25px;
     color: var(--secondary-text-color);
+    @media(max-width: 768px){
+      font-size: 20px;
+    }
   }
   &__temperature-wrapper{
     margin: 0 30px 0 0;
@@ -49,12 +58,12 @@
   &__temperature{
     color: #4793FF;
     margin: 0 0 10px 0;
-    font-size: 96px;
+    font-size: 80px;
     position: relative;
   }
   &__date{
     color: var(--text-color);
-    font-size: 40px;
+    font-size: 30px;
   }
   &__weather-icon{
     height: auto;

@@ -41,13 +41,16 @@
     padding: 10px;
     position: absolute;
     z-index: 10;
-    bottom: 0;
+    bottom: -5px;
     right: 0;
     background: #ffffff;
   }
   &__form--active{
     display: block;
     animation: anim .3s 1 forwards;
+    background: #4793FF;
+    border-radius: 7px;
+    box-shadow: var(--box-shadow);
   }
   &__input{
     padding: 10px;

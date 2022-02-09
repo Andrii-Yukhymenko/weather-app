@@ -14,7 +14,12 @@ function Header() {
   };
 
   let LSTheme = localStorage.getItem("theme");
-  const [theme, setTheme] = useState(LSTheme ? LSTheme : "light");
+
+  if (LSTheme === null) {
+  localStorage.setItem("theme", "light");
+  }
+
+  const [theme, setTheme] = useState(LSTheme);
 
   const toggleTheme = () => {
     setTheme(LSTheme === "light" ? "dark" : "light");
