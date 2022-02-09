@@ -1,5 +1,7 @@
-.weather-tabs{
-  &__container{}
+.daily-forecast{
+  &__container{
+    margin: 0px 0px 25px 0px;
+  }
   &__tabs-buttons-list{
   }
   &__tab{}

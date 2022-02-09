@@ -3,14 +3,13 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import CurrentWeather from "../../components/CurrentWeather/CurrentWeather";
-import WeatherTabs from "../../components/WeatherTabs/WeatherTabs";
-import { useSelector } from "react-redux";
+import DailyForecast from "../../components/DailyForecast/DailyForecast";
 
 function CountryWeatherPage() {
   return (
     <>
       <CurrentWeather />
-      <WeatherTabs />
+      <DailyForecast />
     </>
   );
 }

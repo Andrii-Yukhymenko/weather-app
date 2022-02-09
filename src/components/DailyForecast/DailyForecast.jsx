@@ -11,7 +11,7 @@ import DailyForecastCard from "../DailyForecastCard/DailyForecastCard";
 import Loader from "../Loader/Loader";
 import { findNumberOfCards } from "../../hooks/findNumberOfCards";
 
-function WeatherTabs() {
+function DailyForecast() {
   const { place } = useParams();
   const dispatch = useDispatch();
   const forecastPeriod = useSelector((state) => state.dailyForecast.period);
@@ -26,9 +26,9 @@ function WeatherTabs() {
   return (
     <>
       {!error && (
-        <section className="weather-tabs">
-          <div className="weather-tabs__container container">
-            <div className="weather-tabs__tabs-buttons-list tabs-buttons-list">
+        <section className="daily-forecast">
+          <div className="daily-forecast__container container">
+            <div className="daily-forecast__tabs-buttons-list tabs-buttons-list">
               <button
                 onClick={(e) => {
                   dispatch(setPeriod(7));
@@ -50,8 +50,8 @@ function WeatherTabs() {
                 На 14 дней
               </button>
             </div>
-            <div className="weather-tabs__tab">
-              <div className="weather-tabs__cards-list">
+            <div className="daily-forecast__tab">
+              <div className="daily-forecast__cards-list">
                 {loading ? (
                   <Loader />
                 ) : (
@@ -79,4 +79,4 @@ function WeatherTabs() {
   );
 }
 
-export default WeatherTabs;
+export default DailyForecast;
