@@ -4,7 +4,7 @@
 
 Дата начала работы: 25.01.2022
 
-[Ссылка на этот сайт в моем портфолио](https://react-weather.andrii-yukhymenko.me/)
+[Ссылка на это приложение в моем портфолио](https://react-weather.andrii-yukhymenko.me/)
 
 ### Использованные технологии:
 - Create react app
