@@ -16,15 +16,15 @@ jobs:
 
           script: |
             cd /
-            rm -rf /var/www/react-weather/
-            rm -rf /home/cloned-repo-react-weather/
+            sudo rm -rf /var/www/react-weather/
+            sudo rm -rf /home/cloned-repo-react-weather/
             cd /var/www
-            mkdir react-weather
+            sudo mkdir react-weather
             cd /home
-            mkdir cloned-repo-react-weather
+            sudo mkdir cloned-repo-react-weather
             cd cloned-repo-react-weather
-            git clone https://github.com/Andrii-Yukhymenko/weather-app.git
+            sudo git clone https://github.com/Andrii-Yukhymenko/weather-app.git
             cd weather-app/
-            yarn install
-            yarn build
-            cp -r build/* /var/www/react-weather
+            sudo yarn install
+            sudo yarn build
+            sudo cp -r build/* /var/www/react-weather
